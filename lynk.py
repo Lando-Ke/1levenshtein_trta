@@ -17,14 +17,16 @@ def dist_copmute(word1, word2):
 	##Fill using bottom up dp aproach
 	m = len(word1) + 1
 	n = len(word2) + 1
-	T = [[0 for x in xrange(n)] for x in xrange(m)]
+	T = [[0 for x in range(n)] for x in range(m)]
 
-	for i in xrange(1, m):
+	for i in range(n):
 		T[0][i] = i
+	for i in range(m):
+		T[i][0] = i
     
     #insterts, deletions and substitutions
-	for i in xrange(1, m):
-		for j in xrange(1, n):
+	for i in range(1, m):
+		for j in range(1, n):
 			if word1[i-j] == word2[j-1]:
 				T[i][j] = T[i-1][j-1]
 			else:
@@ -57,5 +59,5 @@ def getEdited(T, word1, word2):
 
 
 if __name__ == '__main__':
-	answer = dist_copmute(list('Test'), list('Trist'))
+	answer = dist_copmute(list('test'), list('trist'))
 	print(answer)
