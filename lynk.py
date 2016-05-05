@@ -1,5 +1,4 @@
-#lynk itnerview question
-#
+
 #@author Gabriel Lando
 #
 #Given a wordlist (newline separated file of words) and given two words as input parameters, 
